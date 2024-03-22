@@ -11,7 +11,7 @@ export default function Sidebar() {
       <div className="bg-[#1A202C] w-1/4 h-screen">
         <div className='px-16 pt-6 py-8 flex gap-1 items-center'>
             <img src={kaloLogo} width={50} height={50} loading='lazy' alt="Kalo clear logo" />
-            <span>Kàlo</span>
+            <span>Kalò</span>
         </div>
         <ul className="px-14 py-3 flex flex-col gap-8 pt-8">
           <li className='flex gap-2 items-center'>
