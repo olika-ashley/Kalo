@@ -12,7 +12,7 @@ export default function MainArea() {
     return (
       <div className="flex w-3/4">
         {/* Main area */}
-        <div className="bg-[#1A202C] w-3/4 h-screen">
+        <div className="bg-[#1A202C] w-3/4 h-screen overflow-y-auto">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sports" element={<Sports />} />
