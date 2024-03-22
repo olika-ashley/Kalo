@@ -19,7 +19,7 @@ export default function MainArea() {
             <Route path="/esports" element={<Esports />} />
             <Route path="/docs" element={<Docs />} />
           </Routes>
-        </div>
+        </div> 
         
         {/* Bets area */}
         <div className="bg-[#1A202C] w-1/4 h-screen">
