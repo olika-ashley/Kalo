@@ -13,8 +13,19 @@ interface Event {
   displayPriority: number;
 }
 
+const SkeletonLoader: React.FC = () => (
+  <div className="animate-pulse bg-gray-700 rounded-md p-4">
+    <div className="mb-2 h-6 bg-gray-600 rounded"></div>
+    <div className="mb-2 h-6 bg-gray-600 rounded"></div>
+    <div className="mb-2 h-6 bg-gray-600 rounded"></div>
+    <div className="mb-2 h-6 bg-gray-600 rounded"></div>
+    <div className="mb-2 h-6 bg-gray-600 rounded"></div>
+  </div>
+);
+
 const Home: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +38,7 @@ const Home: React.FC = () => {
         setEvents(data.eventCategories.flatMap((category) =>
           category.eventGroup.flatMap((group) => group.events)
         ));
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -55,18 +67,24 @@ const Home: React.FC = () => {
       <div>
         <h1 className="text-2xl my-5 mb-16"> The Decentralized Betting platform which leverages Solana Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam soluta qui fuga. </h1>
       </div>
-      {Object.entries(groupedEvents).map(([categoryTitle, events], index) => (
-        <div key={categoryTitle} className={`mb-8 ${index !== 0 ? 'mt-8' : ''}`}>
-          <h2 className="text-white text-lg mb-2">{categoryTitle}</h2>
-          <div className="border border-gray-700 rounded-md p-4 overflow-y-hidden">
-            {events.map((event, index) => (
-              <div key={index} className="mb-2 px-5 py-3">
-                <p className="text-white">{event.eventName}</p>
+      {loading ? (
+        <SkeletonLoader />
+      ) : (
+        <>
+          {Object.entries(groupedEvents).map(([categoryTitle, events], index) => (
+            <div key={categoryTitle} className={`mb-8 ${index !== 0 ? 'mt-8' : ''}`}>
+              <h2 className="text-white text-lg mb-2">{categoryTitle}</h2>
+              <div className="border border-gray-700 rounded-md p-4 overflow-y-hidden">
+                {events.map((event, index) => (
+                  <div key={index} className="mb-2 px-5 py-3">
+                    <p className="text-white">{event.eventName}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      ))}
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 };
