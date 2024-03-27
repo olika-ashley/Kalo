@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Banner from '../assets';
 
 interface Event {
   eventAccount: string;
@@ -64,8 +65,16 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-gray-800 p-4 rounded-md">
-      <div>
-        <h1 className="text-2xl my-5 mb-16"> The Decentralized Betting platform which leverages Solana Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam soluta qui fuga. </h1>
+      <div className="relative cursor-pointer min-h-[235px] rounded-[6px] flex flex-col justify-end mb-5">
+
+        <img
+          src={Banner}
+          className="absolute object-cover w-full h-full rounded-[6px] z-10"
+        />
+        <div className="relative z-50 bottom-[20px] left-[30px] font-bold">
+          On Chain Social Betting, Brought to You! 
+        </div>
+
       </div>
       {loading ? (
         <SkeletonLoader />
