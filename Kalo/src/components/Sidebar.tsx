@@ -5,7 +5,8 @@ import { MdOutlineSportsFootball } from "react-icons/md";
 import { MdOutlineSportsEsports } from "react-icons/md";
 import { SiReadthedocs } from "react-icons/si";
 
-
+// also we need to make this mobile responsive
+//ami idk we could add the signin/sign up buttons here (they'd be at the bottom of the nav bar)
 export default function Sidebar() {
     return (
       <div className="bg-[#1A202C] w-1/4 h-screen">
