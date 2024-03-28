@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../assets';
-import SkeletonLoader from '../components/liveBets';
-import { Event } from '../components/liveBets';
+import SkeletonLoader from '../components/BetLoader';
+import { Event } from '../components/BetLoader';
 
 
 const Home: React.FC = () => {
