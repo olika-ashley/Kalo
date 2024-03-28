@@ -25,13 +25,13 @@ export default function Sidebar() {
             <MdOutlineSportsFootball />
 
             </span> 
-          <Link to="/sports">Create Bets</Link>
+          <Link to="/CreateBet">Create Bets</Link>
         </li>
         <li className='flex gap-2 items-center'>
             <span className="text-lg">
             <MdOutlineSportsEsports />
             </span> 
-          <Link to="/esports">Tournament Mode</Link>
+          <Link to="/Tourney Mode">Tournament Mode</Link>
         </li>
         <li className='flex gap-2 items-center'>
             <span className="text-lg">
