@@ -18,20 +18,20 @@ export default function Sidebar() {
             <span className="text-lg">
                 <IoMdHome />
             </span> 
-          <Link to="/">Home</Link>
+          <Link to="/">Live Bets</Link>
         </li>
         <li className='flex gap-2 items-center'>
             <span className="text-lg">
             <MdOutlineSportsFootball />
 
             </span> 
-          <Link to="/sports">Sports</Link>
+          <Link to="/sports">Create Bets</Link>
         </li>
         <li className='flex gap-2 items-center'>
             <span className="text-lg">
             <MdOutlineSportsEsports />
             </span> 
-          <Link to="/esports">Esports</Link>
+          <Link to="/esports">Tournament Mode</Link>
         </li>
         <li className='flex gap-2 items-center'>
             <span className="text-lg">
